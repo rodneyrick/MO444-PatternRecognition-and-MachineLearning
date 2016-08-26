@@ -1,0 +1,34 @@
+
+Regression Linear
+
+	introducao
+		falar como será o artigo, e abordagem em cada capitulo
+
+		explicar statistical learning
+			página 1
+
+	tratamento dos dados
+		como foi feito o tratamento
+		quais foram as abordagens realizadas
+		como escolher o treino
+		como filtrar
+		base de teste e validação
+
+		elements figura pag 222 e 242
+
+	regressao linear e como aplicar aos dados
+
+		The linear model has been a mainstay of statistics for the past 30 years
+		and remains one of our most important tools. Given a vector of inputs
+		X T = (X 1 ,X 2 ,...,X p ), we predict the output Y via the model
+		ˆY = β[0] + sum (X[j] * β[j])
+
+		explicar diferenca entre regressao linear para de classificação
+
+		vantagens página 44
+
+		elements página 31
+
+		imagem pag 38
+
+		explicar erros de LR: SSE, MSE, Residuais

@@ -1,0 +1,440 @@
+
+
+\documentclass[journal]{IEEEtran}
+\usepackage{blindtext}
+\usepackage{graphicx}
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%--------------------------------------
+ 
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+\usepackage{enumerate}
+\usepackage[numbers]{natbib}
+% \usepackage{cite}
+\usepackage{subcaption}
+\usepackage{caption}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{mate-mática recu-perar}
+%-----
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+
+% *** CITATION PACKAGES ***
+%\usepackage{cite}
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+
+
+% *** MATH PACKAGES ***
+%\usepackage[cmex10]{amsmath}
+%\interdisplaylinepenalty=2500
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%\usepackage{algorithmic}
+
+% *** ALIGNMENT PACKAGES ***
+%\usepackage{array}
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+%\usepackage{eqparbox}
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+% *** FLOAT PACKAGES ***
+%\usepackage{fixltx2e}
+%\usepackage{stfloats}
+%\fnbelowfloat
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty 
+
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% For subfigure.sty:
+% \let\MYorigsubfigure\subfigure
+% \renewcommand{\subfigure}[2][\relax]{\MYorigsubfigure[]{#2}}
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%\usepackage{url}
+% \url{my_url_here}.
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+\title{\LARGE{Abordando \textit{Big Data}, aplicando balanceamento e manipulação dos dados para maximizar ganhos com regressão linear e equações exatas}}
+
+\author{Rodney~Rick}
+
+% The paper headers
+% \markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+\markboth{\date{\today}}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% \tableofcontents
+
+
+\begin{abstract}
+%\boldmath
+A aplicação de regressões lineares (simples ou multivariadas) dentro de um conjunto de dados, normalmente é a forma mais simples de atender rapidamente o objetivo, mas nem sempre a mais eficaz. Para esse trabalho abordaremos, a fim de atender esse tema, como selecionar dados e filtrá-los para aplicação das fórmulas estatísticas da área, com métodos aproximados e exatos. E o entendimento dos resultados obtidos nas etapas descritas.
+% \blindtext[1]
+\end{abstract}
+
+
+% Note that keywords are not normally used for peerreview papers.
+% \begin{IEEEkeywords}
+% Regressão Linear, journal, \LaTeX, paper, template.
+% \end{IEEEkeywords}
+
+% \begin{abstract}
+% Este é um breve resumo do conteúdo do documento escrito em Português.
+% \end{abstract}
+
+\keyword{Palavras-Chave:} Seleção de dados, Regressão Linear, Gradiente Descendente.
+
+
+% http://homepages.dcc.ufmg.br/~mirella/doku.php?id=escrita
+% http://homepages.dcc.ufmg.br/~mirella/doku.php?id=escritaexemplos#exemplos_de_resumo
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+\IEEEpeerreviewmaketitle
+
+\section{Introdução}
+% \blindtext
+
+A aplicação de métodos estatísticos é primordial para várias áreas de ciências. Justifica-se o uso através da abordagem dos seguintes itens: 
+
+\begin{enumerate}[(a)]
+\item Previsão, por exemplo, tentar prever se amanhã irá chover baseado em leituras diárias de dados meteorológicos e comparar com dados passados;
+\item identificação de uma ressonância magnética se a pessoa está com câncer ou pode desenvolver no futuro, baseado em alguns fatores como alimentação.
+\end{enumerate}
+
+Dado os dois exemplos acima, o próximo ponto consiste na mineração de dados (do inglês \textit{data mining}). Este descreve o processo exploratório do grande conjunto de entrada de dados o qual descreva padrões, sendo possível criar um subconjunto válido e conceber um modelo estatístico capaz de intepretar novas entradas e prever qual seria sua classificação, por exemplo, existe chance de 76\% que chova amanhã. Mais detalhes exploratórios são descritos na seção \ref{sec:miner_data}.
+
+Após tratamento e seleção dos dados conforme primeira parte do livro de \citeauthor{carvalhointeligencia} recomenda, "Preparação de Dados", este artigo trata, através da técnica de regressão linear, a classificação da música. Dado uma música e seus atributos como entrada e a aplicação do modelo estatístico gerado, descobrir qual o ano da música.
+
+Elaborado o esperado do modelo regressivo, este artigo é dividido em: 
+
+\begin{enumerate}
+\item manipulação e tratamento de dados;
+\item explicação da técnica estatístico e como foi aplicada para interpretação dos dados;
+\item abordagem da falhas e erros esperados nessa modelagem para este conjunto de dados;
+\item conclusão.
+\end{enumerate}
+
+\section{Manipulação dos dados}
+\label{sec:miner_data}
+
+Esta seção está dividida em dois passos. A primeira sub-seção é o entendimento do conceitos descritos nos primeiros capítulos do livro \cite*{carvalhointeligencia}. A segunda  refere-se em como foi aplicado os conceitos na base de dados de música. 
+
+\subsection{Aplicação de conceitos de preparação de dados}
+
+Abaixo seguem passos importantes para concepção de uma entrada, no mínim adequada, para garantir melhoria contínua da modelagem estatística.
+
+\begin{description}
+  
+  \item[Seleção dos dados] \hfill \\
+  Definir uma amostragem aleatória é importante pelo motivo ajudar a anular os efeitos de fatores não observados. Por exemplo, suponha que deseja-se calcular a altura média das pessoas em uma cidade e fazer a sua amostragem em um bairro qualquer, isto não obtém uma boa estimativa. Pois ocorre que as alturas estão condicionados a um determinado valor de fator "regional", sendo neste caso não adequado ao cálculo da altura das pessoas da cidade como um todo.
+  
+  \item[Redução de dimensionalidade] \hfill \\
+  Trabalhar com um escopo menor de dados, ou seja, um subconjunto torna-se mais viável ao tentar criar uma modelagem estatística ao invés de todo o conjunto de dados.
+  
+  \item[Balanceamento dos dados] \hfill \\
+  Caso a amostra de dados seja desigual, necessita-se uma adaptaçao no momento de seleção dos dados para que não seja favorecido muito somente um subconjunto de dados pequeno e prejudicial para a amostragem total. Para isso, é possível verificar através da aplicação de um gráfico de histograma.  Outros estudos podem ser considerados como avaliação da dispersão do conjunto dos dados, aplicando desvio padrão para posterior seleção do melhor subconjunto de dados a ser elaborado.
+  
+  \item[Transformação dos dados] \hfill \\
+  Para dados numéricos, torna-se viável a normalização. Para dados descritivos, pode-se aplicar o uso de etiquetas numéricas para modelagem, mas não é regra.
+  
+\end{description}
+
+Ainda não terminado. De acordo com \citeauthor{Ng97preventing_overfitting} em um de seus artigos \cite{Ng97preventing_overfitting} e o livro de \citeauthor{hastie2009elements} \cite{hastie2009elements}, torna-se necessário a confecção de 3 bases importantes perante seus dados originais de entrada.
+
+\begin{description}
+  
+  \item[Treino] \hfill \\
+  A fase de treino confere a entrada de dados já selecionados e adaptados (por exemplo, normalizados), servir para treino do modelo e o arranje dos parâmetros e, por fim, adaptar o melhor emparelhamento de entrada com saída esperada.
+  
+  \item[Validação] \hfill \\
+  Durante o procedimento de validação: um conjunto de exemplos usados para ajustar os parâmetros do modelo treinado a fim de estimar o quão bom foi elaborado o mesmo. Trabalhar com informações de erro médio determinando assim, caso necessário, um ponto de parada readaptação do modelo. Como demonstra a figura \ref{fig:train_valid}
+  
+    \begin{figure}[h]
+    \captionsetup{justification=centering}
+    \centering
+    \includegraphics[scale=0.4]{img/train_valid.png} % leia abaixo
+    \caption{\small{Validação do conjunto de treino usando a conjunto de validação, conforme medição de erros (figura retirada do livro \cite{hastie2009elements}, pág. 244).}}
+    \label{fig:train_valid}
+    \end{figure}
+  
+  \item[Teste] \hfill \\
+  Nesta etapa, o modelo final já está concluído e deve ser testado, realizando mesmos testes conforme aplicados na etapa anterior. E uma nova verificação, se houve pouco predição causando uma modelagem chamada de \textit{underfitting} ou uma grande aproximação, porém se aplicado ao modelo, novos dados de testes, não confere nenhuma adaptação. Neste caso o modelo recebe o nome de \textit{overfitting}. A figura \ref{fig:train_test} demonstra tal medição.
+  
+    \begin{figure}[h]
+    \captionsetup{justification=centering}
+    \centering
+    \includegraphics[scale=0.4]{img/train_test.png} % leia abaixo
+    \caption{\small{Acompanhamento da modelagem conforme medição de erros (figura retirada do livro \cite{hastie2009elements}, pág. 44).}}
+    \label{fig:train_test}
+    \end{figure}
+    
+    % \begin{figure}[h]
+    % \captionsetup{justification=centering}
+    % \centering
+    % \includegraphics[scale=0.4]{img/bias-variance.png} % leia abaixo
+    % \caption{\small{A figura demonstra conceitos de avaliação como: (a) para um estimador é o único que resultaria em uma minimização do erro de predição (linha roxa); (b) o erro residual (linha verde). Minimizar o viés de um estimador não é suficiente, uma vez que pode levar a uma função ajustada que modelar o ruído (figura \cite{Brunet}).}}
+    % \label{fig:bias-variance}
+    % \end{figure}
+
+\end{description}
+
+\subsection{O repertório de dados}
+
+Atendido a essas premissas da sub-seção anterior, torna-se possível preparar uma base de entrada para criação do modelo estatístico com uma qualidade, afinal não está sendo beneficiado nenhum grupo majoritário.
+
+Primeiro passo que deve-se seguir é compreender como é a distribuição dos dados. A figura \ref{fig:demo_years} demonstra o histograma da base de entrada.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{img/demo_years.png}
+\caption{\small{Histograma da distribuição de músicas.}}
+\label{fig:demo_years}
+\end{figure}
+
+Após esse estudo quantitativo e entendimento, verifica-se que os dados em um primeiro momento necessitam em passar em uma triagem para balanceamento dos dados. O segundo passo, trabalhar comesse conceito. Para isso, dado que a base de entrada é extremamente desigual, ou seja, existe anos os quais há uma imensa quantidade de músicas e deseja-se não favorecer na modelagem certos anos e depreciar o resultados de outros anos. Na tabela \ref{tab:adaptation}, descreve uma adaptação na base de entrada. 
+
+\begin{table}[h]
+\caption{Tabela de adaptação dos dados.}
+\centering
+    \begin{tabular}{ | l | c |}
+    \hline
+    \textbf{Quantidade} & \textbf{Adaptação} \\ \hline
+    Valores abaixo de 1k & Manteve-se seu valor  \\ \hline
+    Entre 1k e 10k & 1500  \\ \hline
+    Entre 10k e 20k & 2000  \\ \hline
+    Entre 20k e 30k & 2500  \\ \hline
+    Acima de 30k & 3000 \\ \hline
+    \end{tabular}
+\label{tab:adaptation}
+\end{table}
+
+Dado agora que a distribuição de músicas ao longo do anos torna-se mais justa, a figura \ref{fig:freq_years} descreve a nova distribuição dos dados musicais.
+
+\begin{figure}[h]
+% \captionsetup{justification=centering,margin=2cm}
+\centering
+\includegraphics[scale=0.5]{img/freq_years.png} % leia abaixo
+\caption{\small{Frequência da distribuição dos anos.}}
+\label{fig:freq_years}
+\end{figure}
+
+Na literatura, existe uma divergência, na quantidade de dados usados para a elaboração das bases de treino, validação e teste, mas não é demasiado discordante. Normalmente é aplicado para treino, validação e teste a proporção, respectivamente, 50\%, 25\% e 25\%. Para esta modelagem de dados musicais, dados as premissas atendidas em cada subconjunto de dados, foi utilizado um conjunto de 40 mil dados conforme para treino, 20mil para validação e 20 mil para teste.
+
+\section{Regressão Linear}
+
+\subsection{A metodologia} % (fold)
+\label{sub:metodologia}
+
+% subsection subsection_name (end)
+
+A aplicação da técnica de regressão linear é simples e muito usada na área estatística, onde o objetivo é avaliar a relação de uma variável de interesse (ou objetivo) $Y$,também chamada variável dependente, em relação a $k$ variáveis $X_{j}$ (variável independente ou covariável), $j = [1,k]$. 
+
+De acordo com \citeauthor{Bishop:2006:PRM:1162264}, em seu livro \cite{Bishop:2006:PRM:1162264}, transcreve que esse processo concebe-se através do  envolvimento das variáveis $X_{j}$, ou seja, através de uma combinação linear entre as variáveis. Portanto, um possível modelo para avaliar essa relação pode ser dado por:
+\begin{equation}
+y_{i} = \beta_{0} + \sum{\beta_{i}x_{i,k}} + \varepsilon
+\label{eq:linear_regression}
+\end{equation}
+
+Sendo $i=[1,\dots,n]$ e $\varepsilon$ o erro acumulado durante o processo de modelagem.
+
+A fim de minimizar $\varepsilon$, necessita-se de um método de minimização de o valor obtido e valor alvo, nomeada função de custo, para isso a seguir demonstra-se a fórmula da técnica \textit{Gradient Descent}:
+
+\begin{equation}
+J(\theta_0, \theta_1) = \frac{1}{2m} * \sum_{i=1}^{m}[ h_\theta(x^i) - y^i ]^2
+\label{eq:gradient_descent}
+\end{equation}
+
+A função de custo, obtida pós-processamento da \ref{eq:linear_regression}, cálcula o erro médio para a aplicação da equação. Pode ser adaptada e ser calculada \ref{eq:gradient_descent}. A função de custo ajuda a elaboração da fórmula incial desta seção, combinando, linearmente, da melhor maneira as variáveis independentes e diminuindo o erro médio obtido.
+
+É possível aplicar uma metodologia para cálculo exato, mas isso tem seu custo computacional.
+
+\begin{equation}
+\theta = (X^{T}X)^{-1} X^{T} \overrightarrow{y} 
+\label{eq:normal_equation}
+\end{equation}
+
+Na tabela \ref{tab:adaptation}, apresenta uma comparação entre as técnicas:
+
+\begin{table}[h]
+\caption{Tabela comparativa entre \textit{Gradient Decent} e Equação Normal}
+\centering
+    \begin{tabular}{ | p{4cm} | p{4cm} |}
+    \hline
+    \textbf{\textit{Gradient Descent}} & \textbf{\textit{Normal Equation}} \\ \hline
+    Precisa escolher a taxa de aprendizagem & Não precisa escolher a taxa de aprendizagem \\ \hline
+    Precisa muitas iterações & Não precisa de iterações  \\ \hline
+   Funciona bem para n grande ($n>=10^6$)  & Necessário calcular $(X^{T}X)^{-1}$  \\ \hline
+    - & Lento se  n grande \\ \hline
+    \end{tabular}
+    \begin{tablenotes}
+    \small{$m$ é o número de registros e $n$ é o número de atributos de um registro}
+    \end{tablenotes}
+\label{tab:adaptation}
+\end{table}
+
+\subsection{Aplicação aos dados} % (fold)
+\label{sub:aplic_metodologia}
+
+Com o conhecimento das técnicas na sub-seção anterior, o objetivo é aplicar na base de repertório musical tal metodologia. Alcançar a melhor combinação linear das variáveis independentes. E, com o o auxílio do \textit{Gradient Descent}, em cada iteração, encontrar o melhor arranjo de combinações possíveis a ponto de minimizar o valor esperado para o objetivo, ou seja, minimizar a função de custo e obter o melhor resultado para a variável indepedente. 
+
+Assim, torna-se possível, através de uma entrada, da modelagem, com a formulação do melhor alinhamento entre as variáveis independentes, garantir o menor erro. No caso do exemplo musical, dado a entrada de parâmetros que caracterizam a música, o algoritmo deverá encontrar o melhor resultado e classificar o ano correto da música.
+
+A figura \ref{fig:decaimento} apresenta o uso de regressão linear. O eixo X, representa o valor do erro médio. O eixo Y, representa as iterações. Para esse gráfico, foi utilizado para a saída de cada mil iterações um valor de saída. Logo, para a execução de 60 mil iterações, houve 60 saídas contendo o valor do erro médio. O último valor é representado por 8.2 anos de erro, pelo modelo e a partir da base de treino. Ou seja, dada uma música, existe um erro ao classificá-la, no valor de até 8.2 anos de diferença. Porém, o modelo apresenta um erro maior que esse valor quando aplicado para a base de teste, conforme a figura.
+
+\begin{figure}[h]
+\captionsetup{justification=centering}
+\centering
+\includegraphics[scale=0.5]{img/decaiment_2.png} % leia abaixo
+\caption{\small{A ilustrção representa entrada de treino, base de validação e base de teste, respectivamente, o círculo azul, linha preta e linha vermelha.}}
+\label{fig:decaimento}
+\end{figure}
+
+No entanto, mesmo com esse modelo, que apresenta um erro médio pouco menor que uma década, esta formulação erra a predição para entrada de músicas para
+
+
+
+
+
+% \cite{carvalhointeligencia}
+% \cite{Bishop:2006:PRM:1162264}
+% \cite{hastie2009elements}
+% \cite{Duda:2000:PC:954544}
+% \cite{Mitchell:1997:ML:541177}
+% \cite{Ng97preventing_overfitting}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusion}
+% \blindtext
+
+%\appendix[Proof of the Zonklar Equations]
+%\appendix  % for no appendix heading
+
+
+% \appendices
+% \section{Proof of the First Zonklar Equation}
+% Some text for the appendix.
+
+% % use section* for acknowledgement
+% \section*{Acknowledgment}
+
+
+% http://www.dsc.ufcg.edu.br/~lbmarinho/slides/ia_2012_2/regressao_multivariada.pdf
+% http://www.isa.utl.pt/dm/estdel/10-11/slidesRLM.pdf
+
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+% \bibliographystyle{unsrt}
+\bibliographystyle{IEEEtranN}
+% \bibliographystyle{ieeetran}
+\bibliography{IEEEabrv,refs}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+
+\end{document}

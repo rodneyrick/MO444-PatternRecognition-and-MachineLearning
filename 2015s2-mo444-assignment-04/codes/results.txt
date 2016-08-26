@@ -1,0 +1,242 @@
+100% das colunas
+           predicted
+observed    Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      2608         0     107      2       29     652
+  LyingDown     225         0     985     48      115     551
+  Sitting       340         0    2151     96      399     247
+  Stairs       2339         0    2495    680      348    1065
+  Standing      867         0    2133    147      354     699
+  Walking      3399         0     734    115       95     975
+
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                  0.7675          0.00000        0.66533       0.09817         0.08429         0.1833
+Specificity                  0.6681          1.00000        0.70350       0.97742         0.95260         0.8367
+Pos Pred Value               0.2667              NaN        0.24997       0.62500         0.26418         0.2328
+Neg Pred Value               0.9481          0.92304        0.93400       0.73875         0.83745         0.7913
+Prevalence                   0.1359          0.07696        0.12932       0.27708         0.16800         0.2127
+Detection Rate               0.1043          0.00000        0.08604       0.02720         0.01416         0.0390
+Detection Prevalence         0.3911          0.00000        0.34420       0.04352         0.05360         0.1676
+Balanced Accuracy            0.7178          0.50000        0.68441       0.53780         0.51844         0.5100
+
+-------------------------------------------------------------------------------------------------------
+25% das colunas
+Balanced Accuracy           0.71166          0.49944        0.69360       0.53319         0.52469        0.56072
+
+=------------------------------------------------------------------------------------------------------
+0.9
+
+randomForest(formula = fmla, data = d) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 5
+
+        OOB estimate of  error rate: 15.4%
+Confusion matrix:
+          Jogging LyingDown Sitting Stairs Standing Walking class.error
+Jogging      4185         8       4      6       13     311  0.07554672
+LyingDown       0      6869     160      6       47      30  0.03416760
+Sitting        89       175    4767    118      227     134  0.13484574
+Stairs         21        30     272   1722       14     107  0.20498615
+Standing       76        31    1019     62     1185     136  0.52770028
+Walking       525        16      84     20      108    2423  0.23709068
+
+
+           predicted
+observed    Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      2196         0     121      1       20    1060
+  LyingDown     109         0     958     10      182     665
+  Sitting       268        21    2215     20      377     332
+  Stairs       2006         8    2605    330      822    1156
+  Standing      588        19    2161     77      627     728
+  Walking      2190         0     756     16      129    2227
+
+  Statistics by Class:
+
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                 0.64626          0.00000         0.6851       0.04764         0.14929        0.41877
+Specificity                 0.76109          0.99792         0.6967       0.99314         0.92644        0.79977
+Pos Pred Value              0.29849          0.00000         0.2512       0.72687         0.29068        0.36106
+Neg Pred Value              0.93187          0.92289         0.9371       0.73124         0.84358        0.83586
+Prevalence                  0.13592          0.07696         0.1293       0.27708         0.16800        0.21272
+Detection Rate              0.08784          0.00000         0.0886       0.01320         0.02508        0.08908
+Detection Prevalence        0.29428          0.00192         0.3526       0.01816         0.08628        0.24672
+Balanced Accuracy           0.70367          0.49896         0.6909       0.52039         0.53786        0.60927
+
+
+
+0.5	
+Call:
+ randomForest(formula = fmla, data = d) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 12
+
+        OOB estimate of  error rate: 19.4%
+Confusion matrix:
+          Jogging LyingDown Sitting Stairs Standing Walking class.error
+Jogging      4194         8      13      0       14     298  0.07355865
+LyingDown       0      6770     193     13       89      47  0.04808774
+Sitting       170       170    4645    142      285      98  0.15698730
+Stairs         82        25     347   1538       16     158  0.28993536
+Standing      122        31    1153     93      993     117  0.60422479
+Walking       841        18      97     34      177    2009  0.36744332
+
+           predicted
+observed    Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      2509         0     110      0       30     749
+  LyingDown     196         0     991     39      139     559
+  Sitting       326         3    2207     57      363     277
+  Stairs       2265         1    2570    636      375    1080
+  Standing      750         3    2167    126      361     793
+  Walking      3078         0     758    102       87    1293
+
+                       Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                  0.7384          0.00000        0.68265       0.09181         0.08595        0.24314
+Specificity                  0.6938          0.99970        0.69697       0.98207         0.95221        0.82431
+Pos Pred Value               0.2750          0.00000        0.25071       0.66250         0.26642        0.27215
+Neg Pred Value               0.9440          0.92302        0.93665       0.73831         0.83764        0.80122
+Prevalence                   0.1359          0.07696        0.12932       0.27708         0.16800        0.21272
+Detection Rate               0.1004          0.00000        0.08828       0.02544         0.01444        0.05172
+Detection Prevalence         0.3650          0.00028        0.35212       0.03840         0.05420        0.19004
+Balanced Accuracy            0.7161          0.49985        0.68981       0.53694         0.51908        0.53372
+
+
+rpart
+0.5
+
+val.pred    Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      1496      1544    2264   4122     2974    3117
+  LyingDown     184        51     156    262      135     108
+  Sitting        62       161     256   1846      378     195
+  Stairs        705       123     326    421      422     566
+  Standing        0         0       0      0        0       0
+  Walking       951        45     231    276      291    1332
+
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                 0.44026          0.02651        0.07918       0.06078           0.000        0.25047
+Specificity                 0.35094          0.96338        0.87862       0.88148           1.000        0.90885
+Pos Pred Value              0.09641          0.05692        0.08834       0.16426             NaN        0.42610
+Neg Pred Value              0.79943          0.92230        0.86531       0.71003           0.832        0.81777
+Prevalence                  0.13592          0.07696        0.12932       0.27708           0.168        0.21272
+Detection Rate              0.05984          0.00204        0.01024       0.01684           0.000        0.05328
+Detection Prevalence        0.62068          0.03584        0.11592       0.10252           0.000        0.12504
+Balanced Accuracy           0.39560          0.49494        0.47890       0.47113           0.500        0.57966
+
+Jogging: 0.4, LyingDown: 0.5, Sitting: 0.48, Stairs: 0.47, Standing: 0.5, Walking:0.58
+0.39560          0.53        0.47890       0.47113           0.500        0.57966
+
+100%
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                 0.44026          0.02651        0.07918       0.06078           0.000        0.25047
+Specificity                 0.35094          0.96338        0.87862       0.88148           1.000        0.90885
+Pos Pred Value              0.09641          0.05692        0.08834       0.16426             NaN        0.42610
+Neg Pred Value              0.79943          0.92230        0.86531       0.71003           0.832        0.81777
+Prevalence                  0.13592          0.07696        0.12932       0.27708           0.168        0.21272
+Detection Rate              0.05984          0.00204        0.01024       0.01684           0.000        0.05328
+Detection Prevalence        0.62068          0.03584        0.11592       0.10252           0.000        0.12504
+Balanced Accuracy           0.39560          0.49494        0.47890       0.47113           0.500        0.57966
+
+Jogging: 0.4, LyingDown: 0.53, Sitting: 0.5, Stairs: 0.45, Standing: 0.52, Walking:0.61
+0.39560          0.53        0.47890       0.47113           0.500        0.57966
+
+---------------------------------------------------------------------------------------------------200
+
+25% das colunas randon forest
+val.pred    Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      1855       194     277   2372      745    2001
+  LyingDown       6         3      11      5        7      29
+  Sitting        83       686    1793   2578     1623     609
+  Stairs        385       488     304   1138      816     303
+  Standing        2        16      62     99       54      14
+  Walking       215       113      87    440      196     391
+
+Overall Statistics
+                                          
+               Accuracy : 0.2617          
+                 95% CI : (0.2556, 0.2679)
+    No Information Rate : 0.3316          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.1153          
+ Mcnemar's Test P-Value : <2e-16          
+
+Statistics by Class:
+
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                 0.72859          0.00200        0.70758        0.1716         0.01569        0.11682
+Specificity                 0.67979          0.99686        0.68058        0.8282         0.98834        0.93689
+Pos Pred Value              0.24919          0.04918        0.24322        0.3314         0.21862        0.27115
+Neg Pred Value              0.94497          0.92492        0.94132        0.6684         0.82853        0.84072
+Prevalence                  0.12730          0.07500        0.12670        0.3316         0.17205        0.16735
+Detection Rate              0.09275          0.00015        0.08965        0.0569         0.00270        0.01955
+Detection Prevalence        0.37220          0.00305        0.36860        0.1717         0.01235        0.07210
+Balanced Accuracy           0.70419          0.49943        0.69408        0.4999         0.50202        0.52685
+> confusionMatrix(val.pred, val[,1])
+Confusion Matrix and Statistics
+
+           Reference
+Prediction  Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      1855       194     277   2372      745    2001
+  LyingDown       6         3      11      5        7      29
+  Sitting        83       686    1793   2578     1623     609
+  Stairs        385       488     304   1138      816     303
+  Standing        2        16      62     99       54      14
+  Walking       215       113      87    440      196     391
+
+Overall Statistics
+                                          
+               Accuracy : 0.2617          
+                 95% CI : (0.2556, 0.2679)
+    No Information Rate : 0.3316          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.1153          
+ Mcnemar's Test P-Value : <2e-16          
+
+Statistics by Class:
+
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                 0.72859          0.00200        0.70758        0.1716         0.01569        0.11682
+Specificity                 0.67979          0.99686        0.68058        0.8282         0.98834        0.93689
+Pos Pred Value              0.24919          0.04918        0.24322        0.3314         0.21862        0.27115
+Neg Pred Value              0.94497          0.92492        0.94132        0.6684         0.82853        0.84072
+Prevalence                  0.12730          0.07500        0.12670        0.3316         0.17205        0.16735
+Detection Rate              0.09275          0.00015        0.08965        0.0569         0.00270        0.01955
+Detection Prevalence        0.37220          0.00305        0.36860        0.1717         0.01235        0.07210
+Balanced Accuracy           0.70419          0.49943        0.69408        0.4999         0.50202        0.52685
+
+------------------------------------------------------------------------------------------------------------------kurtosis
+
+kurtosis 200 100%
+Confusion Matrix and Statistics
+
+           Reference
+Prediction  Jogging LyingDown Sitting Stairs Standing Walking
+  Jogging      1246        23     178   1582      296     771
+  LyingDown       3        38      21     30       65       3
+  Sitting       521       835    1049   1965     1494     655
+  Stairs          7        68     121    216      257     116
+  Standing       70       271     843   1561      597     392
+  Walking       699       265     322   1278      732    1410
+
+Overall Statistics
+                                         
+               Accuracy : 0.2278         
+                 95% CI : (0.222, 0.2337)
+    No Information Rate : 0.3316         
+    P-Value [Acc > NIR] : 1              
+                                         
+                  Kappa : 0.0889         
+ Mcnemar's Test P-Value : <2e-16         
+
+Statistics by Class:
+
+                     Class: Jogging Class: LyingDown Class: Sitting Class: Stairs Class: Standing Class: Walking
+Sensitivity                  0.4894          0.02533        0.41397       0.03257         0.17350         0.4213
+Specificity                  0.8367          0.99341        0.68682       0.95744         0.81056         0.8021
+Pos Pred Value               0.3042          0.23750        0.16091       0.27516         0.15988         0.2996
+Neg Pred Value               0.9183          0.92631        0.88984       0.66609         0.82516         0.8733
+Prevalence                   0.1273          0.07500        0.12670       0.33160         0.17205         0.1673
+Detection Rate               0.0623          0.00190        0.05245       0.01080         0.02985         0.0705
+Detection Prevalence         0.2048          0.00800        0.32595       0.03925         0.18670         0.2353
+Balanced Accuracy            0.6631          0.50937        0.55040       0.49500         0.49203         0.6117
